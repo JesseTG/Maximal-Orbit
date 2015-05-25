@@ -8,7 +8,10 @@ TrueTypeFontImporter:
   characterPadding: 0
   includeFontData: 1
   use2xBehaviour: 0
-  fontNames: []
+  fontNames:
+  - 
   customCharacters: 
-  fontRenderingMode: 0
+  fontRenderingMode: 3
   userData: 
+  assetBundleName: 
+  assetBundleVariant: 
