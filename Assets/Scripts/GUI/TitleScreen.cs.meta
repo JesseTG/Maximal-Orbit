@@ -1,12 +1,11 @@
 fileFormatVersion: 2
-guid: 391a026d5fcd88640bb3991e6f0f73e2
+guid: e0c7453f5a3165f4c9c5368c7f29df93
 timeCreated: 1431839223
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences:
-  - PlanetPrefab: {fileID: 100000, guid: ab7ae73ea5c34e741bab1af4d67f6053, type: 2}
-  executionOrder: 400
+  defaultReferences: []
+  executionOrder: 600
   icon: {instanceID: 0}
   userData: 
   assetBundleName: 

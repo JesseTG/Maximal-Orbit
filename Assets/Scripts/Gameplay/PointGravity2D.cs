@@ -6,20 +6,22 @@ public class PointGravity2D : MonoBehaviour
 {
     public Vector2 Center;
     private float _gravity;
+    private Rigidbody2D _body;
 
     void Start ()
     {
         this._gravity = Physics2D.gravity.magnitude;
+        this._body = GetComponent<Rigidbody2D>();
     }
 
     void FixedUpdate ()
     {
-        Vector2 force = this.Center - this.rigidbody2D.position;
+        Vector2 force = this.Center - _body.position;
         force.Normalize (); // Direction
 
-        force *= this._gravity * this.rigidbody2D.mass;
+        force *= this._gravity * _body.mass;
         // Acceleration and mass
 
-        this.rigidbody2D.AddForce (force);
+        _body.AddForce (force);
     }
 }

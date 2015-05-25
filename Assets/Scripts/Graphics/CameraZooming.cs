@@ -10,29 +10,29 @@ public class CameraZooming : MonoBehaviour
     [Tooltip("How much the camera should zoom out for each new planet")]
     public float
         ZoomIncrement = 1;
-    private float _target;
+    public float Target;
     private float _initialZoom;
+    private Camera _camera;
 
     void Start ()
     {
-        this._initialZoom = this.camera.orthographicSize;
-        this._target = this._initialZoom;
+        this._camera = GetComponent<Camera> ();
+        this._initialZoom = _camera.orthographicSize;
+        this.Target = this._initialZoom;
     }
     
-    // Update is called once per frame
     void Update ()
     {
-        this.camera.orthographicSize = Mathf.Lerp (this.camera.orthographicSize, this._target, Time.deltaTime);
+        _camera.orthographicSize = Mathf.Lerp (_camera.orthographicSize, Target, Time.deltaTime);
     }
 
     public void IncrementTarget (float amount)
     {
-        this._target += amount;
+        this.Target += amount;
     }
 
-    public void ResetZoom ()
+    public void Reset ()
     {
-        this._target = this._initialZoom;
+        this.Target = this._initialZoom;
     }
-
 }

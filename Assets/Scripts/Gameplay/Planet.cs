@@ -6,20 +6,16 @@ public class Planet : MonoBehaviour
 {
     public float MinAxisRotationSpeed = -5;
     public float MaxAxisRotationSpeed = 5;
-    public string
-        PlanetTag = "Planet";
+    public string PlanetTag = "Planet";
     public string StarTag = "Star";
-    [Tooltip("The materials a planet can be rendered with.  Randomly chosen on creation")]
-    public Material[]
-        Materials;
-    [Tooltip("The sun at the center of the game")]
-    public GameObject
-        Star;
     public FirstRevolutionEvent OnFirstRevolution;
     public PlanetDestroyedEvent OnCrash;
+    private MeshRenderer _renderer;
     private float _total_angle;
     private int _revolutions;
     private bool _dying;
+    private Rigidbody2D _body;
+    private GameObject _star;
 
     public int Revolutions {
         get {
@@ -31,14 +27,13 @@ public class Planet : MonoBehaviour
 
     void Start ()
     {
-        this._pointGravity = this.GetComponent<PointGravity2D> ();
-        this.Star = GameObject.FindGameObjectWithTag (StarTag);
-        this.rigidbody2D.angularVelocity = Random.Range (this.MinAxisRotationSpeed, this.MaxAxisRotationSpeed);
-    }
+        this._pointGravity = GetComponent<PointGravity2D> ();
+        this._renderer = GetComponent<MeshRenderer> ();
+        this._body = GetComponent<Rigidbody2D> ();
+        this._star = GameObject.FindGameObjectWithTag (StarTag);
 
-    public void Release() {
-        
-        this.renderer.sharedMaterial = this.Materials [Random.Range (0, this.Materials.Length)];
+
+        _body.angularVelocity = Random.Range (MinAxisRotationSpeed, MaxAxisRotationSpeed);
     }
 
     void Update ()
@@ -46,8 +41,8 @@ public class Planet : MonoBehaviour
         if (!this._pointGravity.enabled && Input.GetButtonUp ("PlacePlanet")) {
             this._pointGravity.enabled = true;
         } else if (this._pointGravity.enabled) {
-            Vector2 a = this.rigidbody2D.position.normalized;
-            Vector2 b = (a + this.rigidbody2D.velocity).normalized;
+            Vector2 a = _body.position.normalized;
+            Vector2 b = (a + _body.velocity).normalized;
 
             float angle = Vector2.Angle (a, b);
             this._total_angle += angle * Time.deltaTime;
