@@ -29,10 +29,15 @@ public class GameManager : MonoBehaviour
 
     void Start ()
     {
-        this.HighScore = PlayerPrefs.GetInt (HighScoreKey, this.HighScore);
+        string id = SystemInfo.deviceUniqueIdentifier;
+        ZPlayerPrefs.Initialize (id, id);
+#if DEVELOPMENT_BUILD || UNITY_EDITOR
+        Debug.LogFormat ("Initialized ZPlayerPrefs with device ID {0}", id);
+#endif
+        this.HighScore = ZPlayerPrefs.GetInt (HighScoreKey, this.HighScore);
 
 #if DEVELOPMENT_BUILD || UNITY_EDITOR
-        Debug.Log ("Loaded high score " + this.HighScore);
+        Debug.LogFormat ("Loaded high score {0}", this.HighScore);
 #endif
         this._explosion = GameObject.Instantiate (this.ExplosionPrefab) as GameObject;
 
@@ -43,7 +48,7 @@ public class GameManager : MonoBehaviour
     public void UpdateScore (Planet planet)
     {
         this.Score += 1;
-        this.OnScoreChanged.Invoke(this.Score - 1, this.Score);
+        this.OnScoreChanged.Invoke (this.Score - 1, this.Score);
     }
 
     public void CreateExplosion (Planet planet)
@@ -79,10 +84,10 @@ public class GameManager : MonoBehaviour
     public void SaveHighScore ()
     {
         if (this.Score >= this.HighScore) {
-            PlayerPrefs.SetInt (GameManager.HighScoreKey, this.Score);
+            ZPlayerPrefs.SetInt (GameManager.HighScoreKey, this.Score);
             this.HighScore = this.Score;
 
-            PlayerPrefs.Save ();
+            ZPlayerPrefs.Save ();
 #if DEVELOPMENT_BUILD || UNITY_EDITOR
             Debug.LogFormat(this, "Saved high score of {0}", this.Score);
 #endif
