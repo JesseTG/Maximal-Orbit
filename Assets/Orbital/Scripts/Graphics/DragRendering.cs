@@ -7,7 +7,6 @@ using System.Collections;
 public class DragRendering : MonoBehaviour
 {
     private LineRenderer _line;
-    private Material _lineMaterial;
     private int _originID;
     private GameManager _gameManager;
     private PlanetManager _planetManager;
@@ -15,7 +14,6 @@ public class DragRendering : MonoBehaviour
     void Start ()
     {
         this._line = GetComponent<LineRenderer> ();
-        this._lineMaterial = _line.sharedMaterial;
         this._originID = Shader.PropertyToID ("_Origin");
         this._gameManager = GameObject.FindObjectOfType<GameManager> ();
         this._planetManager = GameObject.FindObjectOfType<PlanetManager> ();
@@ -43,7 +41,7 @@ public class DragRendering : MonoBehaviour
             if (Input.GetButtonDown ("PlacePlanet")) {
                 _line.SetPosition (0, dropOff);
                 _line.SetPosition (1, dropOff);
-            } 
+            }
 
             Vector3 mouse = Camera.main.ScreenToWorldPoint (Input.mousePosition);
             mouse.z = 0;
@@ -51,7 +49,7 @@ public class DragRendering : MonoBehaviour
             Vector3 pos = dropOff - diff;
             pos.z = 0;
             _line.SetPosition (1, pos);
-            _lineMaterial.SetVector (_originID, Camera.main.WorldToScreenPoint (pos + 2 * Vector3.down));
+            _line.sharedMaterial.SetVector (_originID, Camera.main.WorldToScreenPoint (pos + 2 * Vector3.down));
             // I don't know why I have to add a constant, but otherwise the origin of the gradient
             // is off by a bit
             #if UNITY_EDITOR

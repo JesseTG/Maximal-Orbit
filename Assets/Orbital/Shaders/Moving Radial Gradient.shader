@@ -11,7 +11,7 @@
     CGPROGRAM
     #pragma vertex vert
     #pragma fragment frag
-    #pragma target 2.0
+    #pragma target 3.0
 
     #include "UnityCG.cginc"
     
@@ -20,8 +20,6 @@
     float _WaveLength;
     float _WaveSpeed;
     float4 _Origin;
-    
-    
     
     float4 vert(float4 v : SV_POSITION) : POSITION {
         return mul (UNITY_MATRIX_MVP, v);
