@@ -5,6 +5,7 @@ using SmartLocalization;
 using SmartLocalization.Editor;
 
 [RequireComponent(typeof(Text), typeof(LocalizedText))]
+[DisallowMultipleComponent]
 public class HighScoreDisplay : MonoBehaviour
 {
     private GameManager _gameManager;
@@ -14,18 +15,18 @@ public class HighScoreDisplay : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-        this._gameManager = GameObject.FindObjectOfType<GameManager> () as GameManager;
-        this._text = this.GetComponent<Text> ();
-        this._localized = this.GetComponent<LocalizedText> ();
+        _gameManager = GameObject.FindObjectOfType<GameManager> () as GameManager;
+        _text = GetComponent<Text> ();
+        _localized = GetComponent<LocalizedText> ();
 
-        this.DisplayHighScore();
+        DisplayHighScore ();
     }
 
     public void DisplayHighScore ()
     {
-        this._text.text = string.Format (
-            LanguageManager.Instance.GetTextValue (this._localized.localizedKey),
-            this._gameManager.HighScore
+        _text.text = string.Format (
+            LanguageManager.Instance.GetTextValue (_localized.localizedKey),
+            _gameManager.HighScore
         );
     }
 }

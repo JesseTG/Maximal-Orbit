@@ -10,12 +10,6 @@ public class Planet : MonoBehaviour
     public string StarTag = "Star";
     public FirstRevolutionEvent OnFirstRevolution;
     public PlanetDestroyedEvent OnCrash;
-    private MeshRenderer _renderer;
-    private float _total_angle;
-    private int _revolutions;
-    private bool _dying;
-    private Rigidbody2D _body;
-    private GameObject _star;
 
     public int Revolutions {
         get {
@@ -23,15 +17,20 @@ public class Planet : MonoBehaviour
         }
     }
 
+    private MeshRenderer _renderer;
+    private float _total_angle;
+    private int _revolutions;
+    private bool _dying;
+    private Rigidbody2D _body;
+    private GameObject _star;
     private PointGravity2D _pointGravity;
 
     void Start ()
     {
-        this._pointGravity = GetComponent<PointGravity2D> ();
-        this._renderer = GetComponent<MeshRenderer> ();
-        this._body = GetComponent<Rigidbody2D> ();
-        this._star = GameObject.FindGameObjectWithTag (StarTag);
-
+        _pointGravity = GetComponent<PointGravity2D> ();
+        _renderer = GetComponent<MeshRenderer> ();
+        _body = GetComponent<Rigidbody2D> ();
+        _star = GameObject.FindObjectOfType<Sun>().gameObject;
 
         _body.angularVelocity = Random.Range (MinAxisRotationSpeed, MaxAxisRotationSpeed);
     }
