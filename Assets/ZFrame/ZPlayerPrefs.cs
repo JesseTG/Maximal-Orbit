@@ -42,17 +42,7 @@ public static class ZPlayerPrefs
         PlayerPrefs.DeleteKey (key);
     }
 
-    public static float GetFloat (string key)
-    {
-        return GetFloat (key, 0.0f);
-    }
-
-    public static float GetFloat (string key, float defaultValue)
-    {
-        return GetFloat (key, defaultValue, true);
-    }
-
-    public static float GetFloat (string key, float defaultValue, bool isDecrypt)
+    public static float GetFloat (string key, float defaultValue = 0.0f, bool isDecrypt = true)
     {
         float retValue = defaultValue;
 
@@ -65,17 +55,7 @@ public static class ZPlayerPrefs
         }
     }
 
-    public static int GetInt (string key)
-    {
-        return GetInt (key, 0);
-    }
-
-    public static int GetInt (string key, int defaultValue)
-    {
-        return GetInt (key, defaultValue, true);
-    }
-
-    public static int GetInt (string key, int defaultValue, bool isDecrypt)
+    public static int GetInt (string key, int defaultValue = 0, bool isDecrypt = true)
     {
         int retValue = defaultValue;
 
