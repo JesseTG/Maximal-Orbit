@@ -3,6 +3,12 @@
 [Tt]emp/
 [Ll]ibrary/
 [Bb]uild/
+
+# Unneeded Assets and Examples #
+# ============================ #
+[Ee]xample/
+[Ee]xamples/
+*/Examples.meta
  
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
