@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
-using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class LoadGame : MonoBehaviour
 {
     void Start ()
     {
-        Application.LoadLevel (1);
+        SceneManager.LoadScene(1);
     }
 }
