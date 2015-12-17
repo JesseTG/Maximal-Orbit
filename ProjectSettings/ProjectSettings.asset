@@ -3,7 +3,7 @@
 --- !u!129 &1
 PlayerSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 6
+  serializedVersion: 8
   AndroidProfiler: 1
   defaultScreenOrientation: 4
   targetDevice: 2
