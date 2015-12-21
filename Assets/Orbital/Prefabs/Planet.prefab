@@ -154,16 +154,14 @@ MonoBehaviour:
   MaxAxisRotationSpeed: 15
   PlanetTag: Planet
   StarTag: Star
-  OnFirstRevolution:
+  OnRevolution:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: FirstRevolutionEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    m_TypeName: PlanetEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   OnCrash:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: PlanetDestroyedEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    m_TypeName: PlanetEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

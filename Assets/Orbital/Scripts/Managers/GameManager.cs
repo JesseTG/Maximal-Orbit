@@ -32,9 +32,9 @@ public class GameManager : MonoBehaviour
     [Header("Events")]
     //
 
-    public GameStartEvent
+    public UnityEvent
         OnGameStart;
-    public GameOverEvent OnGameOver;
+    public UnityEvent OnGameOver;
 
     // Privates
     private GameObject _explosion;
