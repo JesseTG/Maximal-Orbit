@@ -2,6 +2,7 @@
 using System.Collections;
 
 [RequireComponent(typeof(MeshRenderer), typeof(PointGravity2D))]
+[DisallowMultipleComponent]
 public class Planet : MonoBehaviour
 {
     public float MinAxisRotationSpeed = -5;
@@ -10,6 +11,7 @@ public class Planet : MonoBehaviour
     public string StarTag = "Star";
     public PlanetEvent OnRevolution;
     public PlanetEvent OnCrash;
+
 
     public int Revolutions {
         get {
@@ -38,8 +40,11 @@ public class Planet : MonoBehaviour
     void Update ()
     {
         if (!this._pointGravity.enabled && Input.GetButtonUp ("PlacePlanet")) {
+            // If this planet was being prepped for launch, then launched...
             this._pointGravity.enabled = true;
+
         } else if (this._pointGravity.enabled) {
+            // If this planet is active...
             Vector2 a = _body.position.normalized;
             Vector2 b = (a + _body.velocity).normalized;
 
@@ -47,6 +52,7 @@ public class Planet : MonoBehaviour
             this._total_angle += angle * Time.deltaTime;
 
             if (this._total_angle >= 360) {
+                // If this planet has made a revolution...
                 ++this._revolutions;
                 this._total_angle = 0;
                 this.OnRevolution.Invoke (this);
@@ -57,14 +63,10 @@ public class Planet : MonoBehaviour
     void OnTriggerEnter2D (Collider2D other)
     {
         if (!this._dying && (other.tag == this.PlanetTag || other.tag == this.StarTag)) {
+            // If this planet hasn't exploded, and it just hit the star or another planet...
             this._dying = true;
             this.OnCrash.Invoke (this);
             GameObject.Destroy (this.gameObject, .05f);
         }
-
     }
-
-
-   
-
 }
