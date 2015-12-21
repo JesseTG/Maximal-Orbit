@@ -34,5 +34,5 @@
     ENDCG
  } 
 }
- FallBack "Unlit/Color"
+ FallBack "Legacy/Unlit/Color"
 }
