@@ -49,12 +49,7 @@ public class DragRendering : MonoBehaviour
             Vector3 pos = dropOff - diff;
             pos.z = 0;
             _line.SetPosition (1, pos);
-            _line.sharedMaterial.SetVector (_originID, Camera.main.WorldToScreenPoint (pos + 2 * Vector3.down));
-            // I don't know why I have to add a constant, but otherwise the origin of the gradient
-            // is off by a bit
-            #if UNITY_EDITOR
-                Debug.DrawLine (dropOff, pos, Color.blue, 0, false);
-            #endif
+            _line.sharedMaterial.SetVector(_originID, Camera.main.WorldToScreenPoint(pos));
         }
 
     }
