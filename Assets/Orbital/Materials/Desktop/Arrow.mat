@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 5
+  serializedVersion: 6
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -11,6 +11,7 @@ Material:
   m_ShaderKeywords: 
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
+  stringTagMap: {}
   m_SavedProperties:
     serializedVersion: 2
     m_TexEnvs:
@@ -46,7 +47,7 @@ Material:
       data:
         first:
           name: _Shininess
-        second: .699999988
+        second: 0.7
       data:
         first:
           name: _EmissionLM
@@ -62,12 +63,12 @@ Material:
       data:
         first:
           name: _Direction
-        second: 31.0129585
+        second: 31.012959
     m_Colors:
       data:
         first:
           name: _Color
-        second: {r: 1, g: .227450982, b: .0431372561, a: 1}
+        second: {r: 1, g: 0.22745098, b: 0.043137256, a: 1}
       data:
         first:
           name: _SpecColor
@@ -78,16 +79,16 @@ Material:
         second: {r: 0, g: 0, b: 0, a: 0}
       data:
         first:
+          name: _Direction
+        second: {r: -0.09672384, g: 2.9984403, b: 0, a: 0}
+      data:
+        first:
           name: _Color2
-        second: {r: .505882382, g: .0980392173, b: .184313729, a: 1}
+        second: {r: 0.5058824, g: 0.09803922, b: 0.18431373, a: 1}
       data:
         first:
           name: _Origin
-        second: {r: 247.82225, g: 210.9198, b: 16, a: 0}
-      data:
-        first:
-          name: _Direction
-        second: {r: -.0967238396, g: 2.99844027, b: 0, a: 0}
+        second: {r: 610.1801, g: 172.8646, b: 16, a: 0}
       data:
         first:
           name: _Touch

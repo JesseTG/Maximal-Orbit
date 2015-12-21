@@ -10,7 +10,8 @@ public class PlanetManager : MonoBehaviour
         MaxDistance = 5;
     public AudioClip ReleaseSound;
     public AudioClip TouchSound;
-    public PlanetLaunchedEvent OnPlanetLaunched;
+    public PlanetEvent OnPlanetLaunched;
+    public UnityEvent OnScreenTouched;
 
     public Vector2 PlacingDropOff {
         get {

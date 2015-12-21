@@ -8,8 +8,8 @@ public class Planet : MonoBehaviour
     public float MaxAxisRotationSpeed = 5;
     public string PlanetTag = "Planet";
     public string StarTag = "Star";
-    public FirstRevolutionEvent OnFirstRevolution;
-    public PlanetDestroyedEvent OnCrash;
+    public PlanetEvent OnRevolution;
+    public PlanetEvent OnCrash;
 
     public int Revolutions {
         get {
@@ -49,10 +49,7 @@ public class Planet : MonoBehaviour
             if (this._total_angle >= 360) {
                 ++this._revolutions;
                 this._total_angle = 0;
-
-                if (this._revolutions == 1) {
-                    this.OnFirstRevolution.Invoke (this);
-                }
+                this.OnRevolution.Invoke (this);
             }
         }
     }
