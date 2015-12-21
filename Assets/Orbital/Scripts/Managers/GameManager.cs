@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
     public UnityEvent
         OnGameStart;
     public UnityEvent OnGameOver;
+    public IntEvent ScoreChanged;
 
     // Privates
     private GameObject _explosion;

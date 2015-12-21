@@ -11,3 +11,8 @@ public class ScreenTouchedEvent : UnityEvent<Vector2>
 public class PlanetEvent : UnityEvent<Planet>
 {
 }
+
+[Serializable]
+public class IntEvent : UnityEvent<int>
+{
+}
