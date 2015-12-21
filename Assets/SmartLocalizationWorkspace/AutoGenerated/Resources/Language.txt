@@ -120,8 +120,14 @@
 		<value>Best Score Display
 {0} is best score (int)</value>
 	</data>
+	<data name="But Only First" xml:space="preserve">
+		<value>But only the first revolution</value>
+	</data>
 	<data name="Copyright" xml:space="preserve">
 		<value>Game copyright date</value>
+	</data>
+	<data name="Drag" xml:space="preserve">
+		<value>Drag your finger</value>
 	</data>
 	<data name="High Quality" xml:space="preserve">
 		<value>Best quality</value>
@@ -138,9 +144,15 @@
 	<data name="Play" xml:space="preserve">
 		<value>Command to play the game</value>
 	</data>
+	<data name="Point for 1st" xml:space="preserve">
+		<value>Point for 1st Revolution</value>
+	</data>
 	<data name="Quality" xml:space="preserve">
 		<value>Quality label
 {0} is quality name (string)</value>
+	</data>
+	<data name="Release" xml:space="preserve">
+		<value>Release your finger</value>
 	</data>
 	<data name="Score" xml:space="preserve">
 		<value>Score count
@@ -148,5 +160,11 @@
 	</data>
 	<data name="Title" xml:space="preserve">
 		<value>Game's name</value>
+	</data>
+	<data name="Touch" xml:space="preserve">
+		<value>Touch Screen</value>
+	</data>
+	<data name="Launch Another" xml:space="preserve">
+		<value>Launch Another planet</value>
 	</data>
 </root>
