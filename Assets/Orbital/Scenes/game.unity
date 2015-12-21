@@ -506,6 +506,10 @@ Prefab:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 421cf81650f8f244fa6d23f92281d1bc, type: 2}
+      propertyPath: ScoreChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 421cf81650f8f244fa6d23f92281d1bc, type: 2}
       propertyPath: OnScoreChanged.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -831,6 +835,26 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 421cf81650f8f244fa6d23f92281d1bc, type: 2}
       propertyPath: OnGameStart.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 421cf81650f8f244fa6d23f92281d1bc, type: 2}
+      propertyPath: ScoreChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 421cf81650f8f244fa6d23f92281d1bc, type: 2}
+      propertyPath: ScoreChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 421cf81650f8f244fa6d23f92281d1bc, type: 2}
+      propertyPath: ScoreChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1091897549}
+    - target: {fileID: 11400000, guid: 421cf81650f8f244fa6d23f92281d1bc, type: 2}
+      propertyPath: ScoreChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdateScore
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 421cf81650f8f244fa6d23f92281d1bc, type: 2}
+      propertyPath: ScoreChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
     public UnityEvent
         OnGameStart;
     public UnityEvent OnGameOver;
+    public IntEvent ScoreChanged;
 
     // Privates
     private GameObject _explosion;
@@ -61,7 +62,11 @@ public class GameManager : MonoBehaviour
 
     public void PlanetFirstRevolved (Planet planet)
     {
-        this._score++;
+        if (planet.Revolutions == 1)
+        {
+            this._score++;
+            this.ScoreChanged.Invoke(this._score);
+        }
     }
 
     public void GameStart ()

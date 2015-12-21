@@ -10,27 +10,25 @@ public class ScoreDisplay : MonoBehaviour
 {
     private Text _text;
     private LocalizedText _localText;
-    private GameManager _gameManager;
 
     void Start ()
     {
         _text = GetComponent<Text> ();
         _localText = GetComponent<LocalizedText> ();
-        _gameManager = GameObject.FindObjectOfType<GameManager>();
 
-        this.UpdateScore(0,0);
+        this.UpdateScore(0);
     }
 
-    public void UpdateScore (int oldScore, int newScore)
+    public void UpdateScore (int score)
     {
         _text.text = string.Format (
             LanguageManager.Instance.GetTextValue (_localText.localizedKey),
-            _gameManager.Score
+            score
         );
     }
 
     public void OnGameStart ()
     {
-        UpdateScore (0, 0);
+        UpdateScore(0);
     }
 }
