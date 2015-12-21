@@ -150,8 +150,9 @@
 		<value>Play</value>
 	</data>
 	<data name="Point for 1st" xml:space="preserve">
-		<value>Point for 1st
-Revolution</value>
+		<value>1 Point for
+1st
+orbit per planet</value>
 	</data>
 	<data name="Quality" xml:space="preserve">
 		<value>Quality: {0}</value>
