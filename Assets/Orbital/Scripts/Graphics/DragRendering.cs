@@ -49,9 +49,6 @@ public class DragRendering : MonoBehaviour
             Vector3 pos = dropOff - diff;
             pos.z = 0;
             _line.SetPosition (1, pos);
-            #if UNITY_EDITOR
-                Debug.DrawLine (dropOff, pos, Color.blue, 0, false);
-            #endif
             _line.sharedMaterial.SetVector(_originID, Camera.main.WorldToScreenPoint(pos));
         }
 
