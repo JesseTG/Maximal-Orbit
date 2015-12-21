@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof(CanvasGroup), typeof(Animator))]
+[RequireComponent(typeof(CanvasGroup), typeof(Canvas), typeof(Animator))]
 public class Tutorial : MonoBehaviour
 {
     private Animator _animator;
     private CanvasGroup _canvasGroup;
+    private Canvas _canvas;
     private int _gameInProgressID;
     private int _gameLoadedID;
     private int _firstRevolutionID;
@@ -14,6 +15,7 @@ public class Tutorial : MonoBehaviour
     void Start()
     {
         this._canvasGroup = GetComponent<CanvasGroup>();
+        this._canvas = GetComponent<Canvas>();
         this._animator = GetComponent<Animator>();
         this._gameInProgressID = Animator.StringToHash("Game In Progress");
         this._gameLoadedID = Animator.StringToHash("Game Loaded");
@@ -45,13 +47,13 @@ public class Tutorial : MonoBehaviour
 
     public void OnGameStart()
     {
-        _canvasGroup.interactable = false;
+        _canvas.enabled = true;
         _animator.SetBool(_gameInProgressID, true);
     }
 
     public void OnGameEnd()
     {
-        _canvasGroup.interactable = true;
+        _canvas.enabled = false;
         _animator.SetBool(_gameInProgressID, false);
     }
 }

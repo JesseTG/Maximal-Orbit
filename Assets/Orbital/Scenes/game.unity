@@ -463,7 +463,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 19e28b1bff4b436439e92142802fb90a, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -724,7 +724,7 @@ Prefab:
     - target: {fileID: 11400000, guid: 421cf81650f8f244fa6d23f92281d1bc, type: 2}
       propertyPath: OnGameOver.m_PersistentCalls.m_Calls.Array.data[5].m_Target
       value: 
-      objectReference: {fileID: 1378387111}
+      objectReference: {fileID: 1378387109}
     - target: {fileID: 11400000, guid: 421cf81650f8f244fa6d23f92281d1bc, type: 2}
       propertyPath: OnGameOver.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
       value: OnGameEnd
@@ -768,7 +768,7 @@ Prefab:
     - target: {fileID: 11400000, guid: 421cf81650f8f244fa6d23f92281d1bc, type: 2}
       propertyPath: OnGameStart.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 1378387111}
+      objectReference: {fileID: 1378387109}
     - target: {fileID: 11400000, guid: 421cf81650f8f244fa6d23f92281d1bc, type: 2}
       propertyPath: OnGameStart.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
       value: OnGameStart
@@ -2051,7 +2051,7 @@ Canvas:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1378387107}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_RenderMode: 0
   m_Camera: {fileID: 1154516704}
@@ -2087,7 +2087,7 @@ CanvasGroup:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1378387107}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 0
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -2921,7 +2921,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: fa88b8a2d90fc4be8b7b9a1faa898fe6, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
