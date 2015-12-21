@@ -21,7 +21,7 @@
     float _WaveSpeed;
     float4 _Origin;
     
-    float4 vert(float4 v : SV_POSITION) : POSITION {
+    float4 vert(float4 v : POSITION) : POSITION {
         return mul (UNITY_MATRIX_MVP, v);
     }
 
