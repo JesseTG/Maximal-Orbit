@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(DragRendering))]
 [DisallowMultipleComponent]
@@ -11,7 +12,7 @@ public class PlanetManager : MonoBehaviour
     public AudioClip ReleaseSound;
     public AudioClip TouchSound;
     public PlanetEvent OnPlanetLaunched;
-    public UnityEvent OnScreenTouched;
+    public Vector2Event OnScreenTouched;
 
     public Vector2 PlacingDropOff {
         get {
@@ -38,6 +39,7 @@ public class PlanetManager : MonoBehaviour
     private AudioSource _audio;
     private DragRendering _dragRendering;
     private PlacingState _state;
+    private Sun _sun;
     private int _quality;
 
     void Start ()
@@ -48,58 +50,71 @@ public class PlanetManager : MonoBehaviour
         _audio = GetComponent<AudioSource> ();
         _dragRendering = GetComponent<DragRendering> ();
         _quality = QualitySettings.GetQualityLevel ();
+        _sun = FindObjectOfType<Sun>();
     }
    
     // Update is called once per frame
     void Update ()
     {
-        if (this._gameManager.State == GameState.Playing) {
-            if (Input.GetButtonDown ("PlacePlanet")) {
+        if (Input.GetButtonDown("PlacePlanet"))
+        // If the user touches the screen or clicks the mouse...
+        {
+            Vector3 touch = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+            this.OnScreenTouched.Invoke(touch);
+
+            if (Vector2.Distance(_sun.transform.position, touch) > _sun.SafeZone)
+            // If the player didn't touch too close to the sun...
+            {
                 this._state = PlacingState.Placing;
-                this._placingDropOff = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+                this._placingDropOff = touch;
                 _dragRendering.enabled = true;
 
-                this._waitingPlanet = GameObject.Instantiate (
-                this.Data [_quality].PlanetPrefab,
+                this._waitingPlanet = GameObject.Instantiate(
+                this.Data[_quality].PlanetPrefab,
                 this._placingDropOff,
                 Quaternion.identity
                 ) as GameObject;
 
 
-                Planet planet = _waitingPlanet.GetComponent<Planet> ();
-                MeshFilter mf = _waitingPlanet.GetComponent<MeshFilter> ();
-                MeshRenderer mr = _waitingPlanet.GetComponent<MeshRenderer> ();
+                Planet planet = _waitingPlanet.GetComponent<Planet>();
+                MeshFilter mf = _waitingPlanet.GetComponent<MeshFilter>();
+                MeshRenderer mr = _waitingPlanet.GetComponent<MeshRenderer>();
 
-                mf.sharedMesh = Data [_quality].PlanetMesh;
+                mf.sharedMesh = Data[_quality].PlanetMesh;
 
-                _audio.PlayOneShot (this.TouchSound);
-                planet.OnFirstRevolution.AddListener (_gameManager.PlanetFirstRevolved);
-                planet.OnCrash.AddListener (_gameManager.EndGame);
-
-            } else if (this._waitingPlanet && Input.GetButtonUp ("PlacePlanet")) {
-                Vector2 mouse = Camera.main.ScreenToWorldPoint (Input.mousePosition);
-                Vector2 distance = _placingDropOff - mouse;
-                _audio.PlayOneShot (this.ReleaseSound);
-
-                Vector2 force = Vector2.ClampMagnitude (distance, MaxDistance);
-                force *= force.magnitude;
-                this._waitingPlanet.GetComponent<Rigidbody2D> ().AddForce (
-                force, 
-                ForceMode2D.Impulse
-                );
-
-                this._waitingPlanet.GetComponent<Renderer> ().sharedMaterial =
-                    Data [_quality].Materials [Random.Range (0, Data [_quality].Materials.Length)];
-
-                this._waitingPlanet.layer = this.gameObject.layer;
-                this._state = PlacingState.Idle;
-                this._waitingPlanet = null;
-         
-                this.OnPlanetLaunched.Invoke ();
-
-                _dragRendering.enabled = false;
+                _audio.PlayOneShot(this.TouchSound);
+                planet.OnRevolution.AddListener(_gameManager.PlanetFirstRevolved);
+                planet.OnCrash.AddListener(_gameManager.EndGame);
             }
+
+
         }
+        else if (this._waitingPlanet && Input.GetButtonUp("PlacePlanet"))
+        {
+            Vector2 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 distance = _placingDropOff - mouse;
+            _audio.PlayOneShot(this.ReleaseSound);
+
+            Vector2 force = Vector2.ClampMagnitude(distance, MaxDistance);
+            force *= force.magnitude;
+            this._waitingPlanet.GetComponent<Rigidbody2D>().AddForce(
+            force,
+            ForceMode2D.Impulse
+            );
+
+            this._waitingPlanet.GetComponent<Renderer>().sharedMaterial =
+                Data[_quality].Materials[Random.Range(0, Data[_quality].Materials.Length)];
+
+            this._waitingPlanet.layer = this.gameObject.layer;
+            this._state = PlacingState.Idle;
+
+            this.OnPlanetLaunched.Invoke(this._waitingPlanet.GetComponent<Planet>());
+            this._waitingPlanet = null;
+
+            _dragRendering.enabled = false;
+        }
+
     }
 
     public void ClearPlanets ()

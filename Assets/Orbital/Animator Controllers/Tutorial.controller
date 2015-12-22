@@ -74,7 +74,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1e6560e8108af24f92bbfe0dac49653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Triggers: []
+  Triggers:
+  - Screen Touched
+  - Planet Released
+  - First Revolution
+  - Second Revolution
 --- !u!114 &11495312
 MonoBehaviour:
   m_ObjectHideFlags: 1

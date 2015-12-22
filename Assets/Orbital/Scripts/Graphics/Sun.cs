@@ -6,6 +6,10 @@ public class Sun : QualityAdjuster
 {
     public float[] Heights = {0, 0, -2};
 
+
+    [Tooltip("Closest distance to the sun the player can touch without launching a planet")]
+    public float SafeZone = 1;
+
     private LensFlare _flare;
     private MeshFilter _mesh;
     private Renderer _renderer;
