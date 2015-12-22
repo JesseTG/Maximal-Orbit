@@ -7,7 +7,7 @@ AudioImporter:
     sampleRateSetting: 1
     sampleRateOverride: 44100
     compressionFormat: 1
-    quality: .849999964
+    quality: 0.84999996
     conversionMode: 0
   platformSettingOverrides:
     13:
@@ -15,9 +15,10 @@ AudioImporter:
       sampleRateSetting: 1
       sampleRateOverride: 44100
       compressionFormat: 3
-      quality: .849999964
+      quality: 0.84999996
       conversionMode: 0
   forceToMono: 0
+  normalize: 1
   preloadAudioData: 1
   loadInBackground: 1
   3D: 1

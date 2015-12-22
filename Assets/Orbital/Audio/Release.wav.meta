@@ -7,10 +7,11 @@ AudioImporter:
     sampleRateSetting: 1
     sampleRateOverride: 0
     compressionFormat: 0
-    quality: .5
+    quality: 0.5
     conversionMode: 0
   platformSettingOverrides: {}
   forceToMono: 1
+  normalize: 1
   preloadAudioData: 1
   loadInBackground: 1
   3D: 1
