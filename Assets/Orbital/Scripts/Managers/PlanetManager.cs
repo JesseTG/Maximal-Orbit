@@ -12,7 +12,7 @@ public class PlanetManager : MonoBehaviour
     public AudioClip ReleaseSound;
     public AudioClip TouchSound;
     public PlanetEvent OnPlanetLaunched;
-    public UnityEvent OnScreenTouched;
+    public Vector2Event OnScreenTouched;
 
     public Vector2 PlacingDropOff {
         get {

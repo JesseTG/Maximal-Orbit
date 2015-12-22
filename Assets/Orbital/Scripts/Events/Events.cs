@@ -3,7 +3,7 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public class ScreenTouchedEvent : UnityEvent<Vector2>
+public class Vector2Event : UnityEvent<Vector2>
 {
 }
 
