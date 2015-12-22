@@ -135,6 +135,9 @@
 	<data name="Instructions" xml:space="preserve">
 		<value>Game Instructions</value>
 	</data>
+	<data name="Launch Another" xml:space="preserve">
+		<value>Launch Another planet</value>
+	</data>
 	<data name="Low Quality" xml:space="preserve">
 		<value>Fastest quality</value>
 	</data>
@@ -164,7 +167,10 @@
 	<data name="Touch" xml:space="preserve">
 		<value>Touch Screen</value>
 	</data>
-	<data name="Launch Another" xml:space="preserve">
-		<value>Launch Another planet</value>
+	<data name="Create Planets" xml:space="preserve">
+		<value>Create planets</value>
+	</data>
+	<data name="To Orbit This Star" xml:space="preserve">
+		<value>To orbit this star</value>
 	</data>
 </root>

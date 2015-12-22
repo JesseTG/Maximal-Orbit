@@ -126,6 +126,9 @@
 	<data name="Copyright" xml:space="preserve">
 		<value>© 2015 Corundum Games</value>
 	</data>
+	<data name="Create Planets" xml:space="preserve">
+		<value>Create planets</value>
+	</data>
 	<data name="Drag" xml:space="preserve">
 		<value>Drag</value>
 	</data>
@@ -138,7 +141,8 @@
 1 point when a planet revolves around the sun its first time</value>
 	</data>
 	<data name="Launch Another" xml:space="preserve">
-		<value>Keep going</value>
+		<value>Keep going
+(carefully)</value>
 	</data>
 	<data name="Low Quality" xml:space="preserve">
 		<value>Fastest</value>
@@ -150,9 +154,8 @@
 		<value>Play</value>
 	</data>
 	<data name="Point for 1st" xml:space="preserve">
-		<value>1 Point for
-1st
-orbit per planet</value>
+		<value>1 point for
+planet's 1st orbit</value>
 	</data>
 	<data name="Quality" xml:space="preserve">
 		<value>Quality: {0}</value>
@@ -165,6 +168,9 @@ orbit per planet</value>
 	</data>
 	<data name="Title" xml:space="preserve">
 		<value>Orbital</value>
+	</data>
+	<data name="To Orbit This Star" xml:space="preserve">
+		<value>to orbit this star</value>
 	</data>
 	<data name="Touch" xml:space="preserve">
 		<value>Touch
