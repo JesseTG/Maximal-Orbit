@@ -7,20 +7,26 @@ public class Tutorial : MonoBehaviour
     private Animator _animator;
     private CanvasGroup _canvasGroup;
     private Canvas _canvas;
+    private Sun _sun;
+
     private int _gameInProgressID;
     private int _gameLoadedID;
     private int _firstRevolutionID;
     private int _secondRevolutionID;
+    private int _screenTouchedID;
 
     void Start()
     {
         this._canvasGroup = GetComponent<CanvasGroup>();
         this._canvas = GetComponent<Canvas>();
         this._animator = GetComponent<Animator>();
+        this._sun = FindObjectOfType<Sun>();
+
         this._gameInProgressID = Animator.StringToHash("Game In Progress");
         this._gameLoadedID = Animator.StringToHash("Game Loaded");
         this._firstRevolutionID = Animator.StringToHash("First Revolution");
         this._secondRevolutionID = Animator.StringToHash("Second Revolution");
+        this._screenTouchedID = Animator.StringToHash("Screen Touched");
 
         _animator.SetTrigger(_gameLoadedID);
     }
@@ -42,6 +48,15 @@ public class Tutorial : MonoBehaviour
         {
             _animator.SetTrigger(_secondRevolutionID);
             planet.OnRevolution.RemoveListener(this.OnPlanetRevolution);
+        }
+    }
+
+    public void OnScreenTouched(Vector2 touch)
+    {
+        if (Vector2.Distance(_sun.transform.position, touch) > _sun.SafeZone)
+        // If the user didn't touch the sun...
+        {
+            this._animator.SetTrigger(this._screenTouchedID);
         }
     }
 
