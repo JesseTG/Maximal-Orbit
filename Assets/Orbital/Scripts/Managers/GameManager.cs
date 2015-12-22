@@ -73,7 +73,8 @@ public class GameManager : MonoBehaviour
     public void GameStart ()
     {
         this._score = 0;
-        _explosionParticles.Clear ();
+        _explosionParticles.Stop();
+        _explosionParticles.Clear();
         this.State = GameState.Playing;
         this.OnGameStart.Invoke ();
     }
