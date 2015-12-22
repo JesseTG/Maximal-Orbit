@@ -35,7 +35,6 @@ public class PlanetManager : MonoBehaviour
     private Vector2 _placingDropOff;
     private GameObject _waitingPlanet;
     private GameManager _gameManager;
-    private GUIManager _gui;
     private AudioSource _audio;
     private DragRendering _dragRendering;
     private PlacingState _state;
@@ -46,7 +45,6 @@ public class PlanetManager : MonoBehaviour
     {
         _state = PlacingState.Idle;
         _gameManager = GameObject.FindObjectOfType<GameManager> ();
-        _gui = GameObject.FindObjectOfType<GUIManager> ();
         _audio = GetComponent<AudioSource> ();
         _dragRendering = GetComponent<DragRendering> ();
         _quality = QualitySettings.GetQualityLevel ();
