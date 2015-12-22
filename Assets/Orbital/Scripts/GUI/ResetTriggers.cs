@@ -6,10 +6,10 @@ public class ResetTriggers : StateMachineBehaviour {
 
 	 // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
 	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-        animator.ResetTrigger("Screen Touched");
-        animator.ResetTrigger("Planet Released");
-        animator.ResetTrigger("First Revolution");
-        animator.ResetTrigger("Second Revolution");
+        foreach (string s in Triggers)
+        {
+            animator.ResetTrigger(s);
+        }
 	}
 
 	// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
