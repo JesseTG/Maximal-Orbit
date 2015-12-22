@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="svg2"
+   viewBox="0 0 128.8928 129.4582"
+   height="36.53598mm"
+   width="36.376411mm"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="no-touch-sun.svg"
+   inkscape:export-filename="D:\Code\Orbital\Assets\Orbital\Textures\GUI\no-touch-sun.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     id="namedview7"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="1.0976936"
+     inkscape:cx="108.40707"
+     inkscape:cy="108.22724"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <defs
+     id="defs4" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="matrix(0.59202452,0,0,0.59462152,-133.01228,-239.77303)"
+     id="layer1"
+     style="stroke:#800000;stroke-width:6.74170637;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">
+    <path
+       id="rect3336"
+       d="m 232.71743,431.58468 c -6.26779,6.26779 -6.26779,16.35962 0,22.62741 l 57.88194,57.88194 -57.88194,57.88194 c -6.26779,6.26779 -6.26779,16.35962 0,22.62742 l 20.30446,20.30445 c 6.2678,6.2678 16.35963,6.2678 22.62742,0 l 57.88194,-57.88193 57.88194,57.88194 c 6.26779,6.26779 16.35962,6.26779 22.62742,0 l 20.30446,-20.30446 c 6.26779,-6.26779 6.26779,-16.35962 0,-22.62741 l -57.88195,-57.88195 57.88194,-57.88194 c 6.26779,-6.26779 6.26779,-16.35962 0,-22.62741 L 414.0406,411.28022 c -6.26779,-6.26779 -16.35962,-6.26779 -22.62742,0 l -57.88193,57.88194 -57.88194,-57.88194 c -6.26779,-6.26779 -16.35962,-6.26779 -22.62742,0 l -20.30446,20.30446 z"
+       style="fill:#ff0000;fill-rule:evenodd;stroke:#800000;stroke-width:6.74170637;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>
