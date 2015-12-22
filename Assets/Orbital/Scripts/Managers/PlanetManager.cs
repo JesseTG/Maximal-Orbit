@@ -9,25 +9,32 @@ public class PlanetManager : MonoBehaviour
     [Tooltip("Farthest distance the player can drag and still affect the launch force")]
     public float
         MaxDistance = 5;
+
     public AudioClip ReleaseSound;
     public AudioClip TouchSound;
     public PlanetEvent OnPlanetLaunched;
     public Vector2Event OnScreenTouched;
 
-    public Vector2 PlacingDropOff {
-        get {
+    public Vector2 PlacingDropOff
+    {
+        get
+        {
             return this._placingDropOff;
         }
     }
-    
-    public PlacingState State {
-        get {
+
+    public PlacingState State
+    {
+        get
+        {
             return _state;
         }
     }
-    
-    public GameObject WaitingPlanet {
-        get {
+
+    public GameObject WaitingPlanet
+    {
+        get
+        {
             return _waitingPlanet;
         }
     }
@@ -41,18 +48,17 @@ public class PlanetManager : MonoBehaviour
     private Sun _sun;
     private int _quality;
 
-    void Start ()
+    void Start()
     {
         _state = PlacingState.Idle;
-        _gameManager = GameObject.FindObjectOfType<GameManager> ();
-        _audio = GetComponent<AudioSource> ();
-        _dragRendering = GetComponent<DragRendering> ();
-        _quality = QualitySettings.GetQualityLevel ();
+        _gameManager = GameObject.FindObjectOfType<GameManager>();
+        _audio = GetComponent<AudioSource>();
+        _dragRendering = GetComponent<DragRendering>();
+        _quality = QualitySettings.GetQualityLevel();
         _sun = FindObjectOfType<Sun>();
     }
-   
-    // Update is called once per frame
-    void Update ()
+
+    void Update()
     {
         if (Input.GetButtonDown("PlacePlanet"))
         // If the user touches the screen or clicks the mouse...
@@ -115,24 +121,25 @@ public class PlanetManager : MonoBehaviour
 
     }
 
-    public void ClearPlanets ()
+    public void ClearPlanets()
     {
-        GameObject[] planets = GameObject.FindGameObjectsWithTag ("Planet");
-        foreach (GameObject planet in planets) {
-            GameObject.Destroy (planet);
+        GameObject[] planets = GameObject.FindGameObjectsWithTag("Planet");
+        foreach (GameObject planet in planets)
+        {
+            GameObject.Destroy(planet);
         }
     }
 
-    void OnEnable ()
+    void OnEnable()
     {
-        this.ClearPlanets ();
+        this.ClearPlanets();
         this._state = PlacingState.Idle;
-        this._quality = QualitySettings.GetQualityLevel ();
+        this._quality = QualitySettings.GetQualityLevel();
     }
-    
-    void OnDisable ()
+
+    void OnDisable()
     {
-        this.ClearPlanets ();
+        this.ClearPlanets();
     }
 }
 

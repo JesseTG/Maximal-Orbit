@@ -14,14 +14,19 @@ public class GameManager : MonoBehaviour
     public GameObject ExplosionPrefab;
     public GameState State = GameState.Title;
 
-    public int HighScore {
-        get {
+
+    public int HighScore
+    {
+        get
+        {
             return _highScore;
         }
     }
 
-    public int Score {
-        get {
+    public int Score
+    {
+        get
+        {
             return _score;
         }
     }
@@ -43,25 +48,25 @@ public class GameManager : MonoBehaviour
     private ParticleSystem _explosionParticles;
     private AudioSource _explosionAudio;
 
-    void Start ()
+    void Start()
     {
         string id = SystemInfo.deviceUniqueIdentifier;
-        ZPlayerPrefs.Initialize (id, id);
+        ZPlayerPrefs.Initialize(id, id);
 #if DEVELOPMENT_BUILD || UNITY_EDITOR
-        Debug.LogFormat (this, "Initialized ZPlayerPrefs with device ID {0}", id);
+        Debug.LogFormat(this, "Initialized ZPlayerPrefs with device ID {0}", id);
 #endif
-        _highScore = ZPlayerPrefs.GetInt (HighScoreKey);
+        _highScore = ZPlayerPrefs.GetInt(HighScoreKey);
 
 #if DEVELOPMENT_BUILD || UNITY_EDITOR
-        Debug.LogFormat (this, "Loaded high score {0}", HighScore);
+        Debug.LogFormat(this, "Loaded high score {0}", HighScore);
 #endif
-        _explosion = GameObject.Instantiate (ExplosionPrefab);
+        _explosion = GameObject.Instantiate(ExplosionPrefab);
 
-        _explosionParticles = _explosion.GetComponent<ParticleSystem> ();
-        _explosionAudio = _explosion.GetComponent<AudioSource> ();
+        _explosionParticles = _explosion.GetComponent<ParticleSystem>();
+        _explosionAudio = _explosion.GetComponent<AudioSource>();
     }
 
-    public void PlanetFirstRevolved (Planet planet)
+    public void PlanetFirstRevolved(Planet planet)
     {
         if (planet.Revolutions == 1)
         {
@@ -70,26 +75,29 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void GameStart ()
+    public void GameStart()
     {
         this._score = 0;
         _explosionParticles.Stop();
         _explosionParticles.Clear();
         this.State = GameState.Playing;
-        this.OnGameStart.Invoke ();
+        this.OnGameStart.Invoke();
     }
 
-    public void EndGame (Planet planet)
+    public void EndGame(Planet planet)
     {
-        if (this.State != GameState.Title) {
-            if (!_explosionParticles.isPlaying) {
-                _explosion.transform.position = planet.gameObject.transform.position;
-                _explosionParticles.Play ();
-                _explosionAudio.PlayOneShot (_explosionAudio.clip);
+        if (this.State != GameState.Title)
+        {
+            if (!_explosionParticles.isPlaying)
+            // If the explosion hasn't already been triggered...
+            {
+                _explosion.transform.position = planet.transform.position;
+                _explosionParticles.Play();
+                _explosionAudio.PlayOneShot(_explosionAudio.clip);
             }
 
             this.State = GameState.Title;
-            this.OnGameOver.Invoke ();
+            this.OnGameOver.Invoke();
 
 #if DEVELOPMENT_BUILD || UNITY_EDITOR
             Debug.LogFormat(this, "Game over! You scored {0}", Score);
@@ -97,17 +105,18 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void SaveHighScore ()
+    public void SaveHighScore()
     {
-        if (this.Score >= this.HighScore) {
-            ZPlayerPrefs.SetInt (GameManager.HighScoreKey, Score);
+        if (this.Score >= this.HighScore)
+        {
+            ZPlayerPrefs.SetInt(GameManager.HighScoreKey, Score);
             this._highScore = Score;
 
-            ZPlayerPrefs.Save ();
+            ZPlayerPrefs.Save();
 
-            #if DEVELOPMENT_BUILD || UNITY_EDITOR
+#if DEVELOPMENT_BUILD || UNITY_EDITOR
             Debug.LogFormat(this, "Saved high score of {0}", Score);
-            #endif
+#endif
         }
     }
 }
