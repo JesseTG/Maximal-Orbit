@@ -9,7 +9,4 @@ public class PlanetAssetData : ScriptableObject
     [Tooltip("The planet that will be created")]
     public GameObject
         PlanetPrefab;
-    [Tooltip("The materials a planet can be rendered with.  Randomly chosen on creation")]
-    public Material[]
-        Materials;
 }
