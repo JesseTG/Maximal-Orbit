@@ -26,6 +26,8 @@ public class Planet : MonoBehaviour
     private Rigidbody2D _body;
     private GameObject _star;
     private PointGravity2D _pointGravity;
+    private AudioSource _audioSource;
+    private ParticleSystem _particleSystem;
 
     void Start ()
     {
@@ -33,8 +35,11 @@ public class Planet : MonoBehaviour
         _renderer = GetComponent<MeshRenderer> ();
         _body = GetComponent<Rigidbody2D> ();
         _star = GameObject.FindObjectOfType<Sun>().gameObject;
+        _audioSource = GetComponent<AudioSource>();
+        _particleSystem = GetComponent<ParticleSystem>();
 
         _body.angularVelocity = Random.Range (MinAxisRotationSpeed, MaxAxisRotationSpeed);
+        this.OnRevolution.AddListener(this.OnFirstOrbit);
     }
 
     void Update ()
@@ -67,6 +72,17 @@ public class Planet : MonoBehaviour
             this._dying = true;
             this.OnCrash.Invoke (this);
             GameObject.Destroy (this.gameObject, .05f);
+        }
+    }
+
+    public void OnFirstOrbit(Planet planet)
+    {
+        if (this._revolutions == 1)
+            // If this is this planet's first orbit...
+        {
+            this._audioSource.Play();
+            this._particleSystem.Play();
+            this.OnRevolution.RemoveListener(this.OnFirstOrbit);
         }
     }
 }
