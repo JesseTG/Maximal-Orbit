@@ -1527,6 +1527,17 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 993db4d414d68d34eaf08be5d71c4259, type: 2}
   - {fileID: 11400000, guid: a5d988aca471b3e439315ad56cbaa679, type: 2}
   - {fileID: 11400000, guid: b9ae3adbeedf17340876101026845afd, type: 2}
+  Materials:
+  - {fileID: 2100000, guid: 6cd6d99cbb1a5ec4b920054242081984, type: 2}
+  - {fileID: 2100000, guid: 866708ed837e5244a9a507944ffc6941, type: 2}
+  - {fileID: 2100000, guid: d7248e37699f11c40b026a8789ab87f2, type: 2}
+  - {fileID: 2100000, guid: 48d71c9a37f36c14f95c3ca3ac5738e6, type: 2}
+  - {fileID: 2100000, guid: f032aae7b453f8c4ca6f52fa54f3168f, type: 2}
+  - {fileID: 2100000, guid: fcaf47e6f9d521b4f94a7901562f8dec, type: 2}
+  - {fileID: 2100000, guid: c586c41853f52d74cb4abd676ce8fab2, type: 2}
+  - {fileID: 2100000, guid: 9480b5f869e73f44d9a15e607efc1eef, type: 2}
+  - {fileID: 2100000, guid: bf7965a7c9fc3714c80e55a7830a38f3, type: 2}
+  - {fileID: 2100000, guid: 3fadbaf134d84cc4a832f99deb1f14eb, type: 2}
   MaxDistance: 3
   ReleaseSound: {fileID: 8300000, guid: e4476e1fd27b344bbb4a00404d9fa2a4, type: 3}
   TouchSound: {fileID: 8300000, guid: 45c699185eb31451cb8eeaa545893bf5, type: 3}

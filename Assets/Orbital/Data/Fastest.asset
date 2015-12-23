@@ -14,13 +14,8 @@ MonoBehaviour:
   PlanetMesh: {fileID: 4300000, guid: bdfe6f02437a76a408ec5391e22e1603, type: 3}
   PlanetPrefab: {fileID: 100000, guid: ab7ae73ea5c34e741bab1af4d67f6053, type: 2}
   Materials:
-  - {fileID: 2100000, guid: d3a12677c7a175b4692d3e319d5e99f2, type: 2}
-  - {fileID: 2100000, guid: 1771e9222e5fd3b449bdec65b839babe, type: 2}
-  - {fileID: 2100000, guid: 81015f398c9809c47a56f07afe83b056, type: 2}
-  - {fileID: 2100000, guid: c014e5a43154ec54780291a2a9a130a5, type: 2}
-  - {fileID: 2100000, guid: 7cf7745dc042fb54996844bcec71b078, type: 2}
-  - {fileID: 2100000, guid: 8f7a641378e65574db57c5d88ab6cdbe, type: 2}
-  - {fileID: 2100000, guid: 4d7a5e1a213de924ea34bc96c820f9b7, type: 2}
-  - {fileID: 2100000, guid: 9036238649a3de54580065c443c10fb7, type: 2}
-  - {fileID: 2100000, guid: 55997a6a3976fd9469192abec5846db6, type: 2}
-  - {fileID: 2100000, guid: a8e6279e02d5489408227ddca2aaea20, type: 2}
+  - {fileID: 2100000, guid: 6cd6d99cbb1a5ec4b920054242081984, type: 2}
+  - {fileID: 2100000, guid: 866708ed837e5244a9a507944ffc6941, type: 2}
+  - {fileID: 2100000, guid: d7248e37699f11c40b026a8789ab87f2, type: 2}
+  - {fileID: 2100000, guid: 48d71c9a37f36c14f95c3ca3ac5738e6, type: 2}
+  - {fileID: 2100000, guid: f032aae7b453f8c4ca6f52fa54f3168f, type: 2}

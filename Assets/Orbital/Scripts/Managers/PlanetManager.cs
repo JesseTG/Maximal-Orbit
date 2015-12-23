@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class PlanetManager : MonoBehaviour
 {
     public PlanetAssetData[] Data;
+    public Material[] Materials;
     [Tooltip("Farthest distance the player can drag and still affect the launch force")]
     public float
         MaxDistance = 5;
@@ -108,7 +109,7 @@ public class PlanetManager : MonoBehaviour
             );
 
             this._waitingPlanet.GetComponent<Renderer>().sharedMaterial =
-                Data[_quality].Materials[Random.Range(0, Data[_quality].Materials.Length)];
+                Materials[Random.Range(0, Materials.Length)];
 
             this._waitingPlanet.layer = this.gameObject.layer;
             this._state = PlacingState.Idle;
