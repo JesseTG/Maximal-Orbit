@@ -5,7 +5,7 @@ using UnityEngine.Events;
 [DisallowMultipleComponent]
 public class PlanetManager : MonoBehaviour
 {
-    public PlanetAssetData[] Data;
+    public GameObject PlanetPrefab;
     public Material[] Materials;
     [Tooltip("Farthest distance the player can drag and still affect the launch force")]
     public float
@@ -76,7 +76,7 @@ public class PlanetManager : MonoBehaviour
                 _dragRendering.enabled = true;
 
                 this._waitingPlanet = GameObject.Instantiate(
-                this.Data[_quality].PlanetPrefab,
+                this.PlanetPrefab,
                 this._placingDropOff,
                 Quaternion.identity
                 ) as GameObject;
@@ -86,7 +86,6 @@ public class PlanetManager : MonoBehaviour
                 MeshFilter mf = _waitingPlanet.GetComponent<MeshFilter>();
                 MeshRenderer mr = _waitingPlanet.GetComponent<MeshRenderer>();
 
-                mf.sharedMesh = Data[_quality].PlanetMesh;
 
                 _audio.PlayOneShot(this.TouchSound);
                 planet.OnRevolution.AddListener(_gameManager.PlanetFirstRevolved);

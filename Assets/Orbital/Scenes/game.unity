@@ -1523,10 +1523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 391a026d5fcd88640bb3991e6f0f73e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Data:
-  - {fileID: 11400000, guid: 993db4d414d68d34eaf08be5d71c4259, type: 2}
-  - {fileID: 11400000, guid: a5d988aca471b3e439315ad56cbaa679, type: 2}
-  - {fileID: 11400000, guid: b9ae3adbeedf17340876101026845afd, type: 2}
+  PlanetPrefab: {fileID: 100000, guid: ab7ae73ea5c34e741bab1af4d67f6053, type: 2}
   Materials:
   - {fileID: 2100000, guid: 6cd6d99cbb1a5ec4b920054242081984, type: 2}
   - {fileID: 2100000, guid: 866708ed837e5244a9a507944ffc6941, type: 2}
