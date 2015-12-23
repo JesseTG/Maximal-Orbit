@@ -83,9 +83,6 @@ public class PlanetManager : MonoBehaviour
 
 
                 Planet planet = _waitingPlanet.GetComponent<Planet>();
-                MeshFilter mf = _waitingPlanet.GetComponent<MeshFilter>();
-                MeshRenderer mr = _waitingPlanet.GetComponent<MeshRenderer>();
-
 
                 _audio.PlayOneShot(this.TouchSound);
                 planet.OnRevolution.AddListener(_gameManager.PlanetFirstRevolved);
