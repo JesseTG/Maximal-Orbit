@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(DragRendering))]
 [DisallowMultipleComponent]
-public class PlanetManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerExitHandler
+public class PlanetManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     public GameObject PlanetPrefab;
     public Material[] Materials;
@@ -145,11 +145,6 @@ public class PlanetManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
 
             _dragRendering.enabled = false;
         }
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        this.OnPointerUp(eventData);
     }
 
     void OnApplicationFocus(bool focusStatus)
