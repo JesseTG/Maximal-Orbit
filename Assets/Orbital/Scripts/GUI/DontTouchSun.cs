@@ -7,13 +7,14 @@ public class DontTouchSun : MonoBehaviour {
     private Sun _sun;
     private AudioSource _audioSource;
     private int _sunTouchedID;
-
+    private int _gameInProgressID;
     void Start()
     {
         _animator = GetComponent<Animator>();
         _sun = FindObjectOfType<Sun>();
         _audioSource = GetComponent<AudioSource>();
         _sunTouchedID = Animator.StringToHash("Sun Touched");
+        _gameInProgressID = Animator.StringToHash("Game In Progress");
     }
 
 	public void OnScreenTouched(Vector2 touch)
@@ -23,6 +24,16 @@ public class DontTouchSun : MonoBehaviour {
         {
             this._animator.SetTrigger(this._sunTouchedID);
         }
+    }
+
+    public void OnGameStart()
+    {
+        this._animator.SetBool(_gameInProgressID, true);
+    }
+
+    public void OnGameEnd()
+    {
+        this._animator.SetBool(_gameInProgressID, false);
     }
 
     public void PlaySound()
