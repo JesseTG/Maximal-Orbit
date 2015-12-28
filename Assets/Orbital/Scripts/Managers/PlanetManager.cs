@@ -61,12 +61,6 @@ public class PlanetManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
         _sun = FindObjectOfType<Sun>();
     }
 
-    void Update()
-    {
-
-
-    }
-
     public void ClearPlanets()
     {
         GameObject[] planets = GameObject.FindGameObjectsWithTag("Planet");
