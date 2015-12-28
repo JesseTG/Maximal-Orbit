@@ -1,8 +1,10 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(LineRenderer))]
 [DisallowMultipleComponent]
-public class DragRendering : MonoBehaviour
+public class DragRendering : MonoBehaviour, IPointerDownHandler
 {
     private LineRenderer _line;
     private int _originID;
@@ -38,11 +40,7 @@ public class DragRendering : MonoBehaviour
         if (_planetManager.State == PlacingState.Placing)
         {
             Vector3 dropOff = _planetManager.PlacingDropOff;
-            if (Input.GetButtonDown("PlacePlanet"))
-            {
-                _line.SetPosition(0, dropOff);
-                _line.SetPosition(1, dropOff);
-            }
+
 
             Vector3 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mouse.z = 0;
@@ -53,5 +51,13 @@ public class DragRendering : MonoBehaviour
             _line.sharedMaterial.SetVector(_originID, Camera.main.WorldToScreenPoint(pos));
         }
 
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        Vector3 dropOff = _planetManager.PlacingDropOff;
+
+        _line.SetPosition(0, dropOff);
+        _line.SetPosition(1, dropOff);
     }
 }

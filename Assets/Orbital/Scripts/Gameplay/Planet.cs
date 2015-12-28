@@ -44,11 +44,8 @@ public class Planet : MonoBehaviour
 
     void Update ()
     {
-        if (!this._pointGravity.enabled && Input.GetButtonUp ("PlacePlanet")) {
-            // If this planet was being prepped for launch, then launched...
-            this._pointGravity.enabled = true;
-
-        } else if (this._pointGravity.enabled) {
+        if (this._pointGravity.enabled)
+        {
             // If this planet is active...
             Vector2 a = _body.position.normalized;
             Vector2 b = (a + _body.velocity).normalized;
