@@ -129,6 +129,9 @@
 	<data name="Create Planets" xml:space="preserve">
 		<value>Create planets</value>
 	</data>
+	<data name="Daily" xml:space="preserve">
+		<value>Daily</value>
+	</data>
 	<data name="Drag" xml:space="preserve">
 		<value>Drag</value>
 	</data>
