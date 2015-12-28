@@ -8,14 +8,14 @@ using SmartLocalization.Editor;
 [DisallowMultipleComponent]
 public class HighScoreDisplay : MonoBehaviour
 {
-    private GameManager _gameManager;
+    private ScoreManager _scoreManager;
     private Text _text;
     private LocalizedText _localized;
 
     // Use this for initialization
     void Start ()
     {
-        _gameManager = GameObject.FindObjectOfType<GameManager> () as GameManager;
+        _scoreManager = FindObjectOfType<ScoreManager> () as ScoreManager;
         _text = GetComponent<Text> ();
         _localized = GetComponent<LocalizedText> ();
 
@@ -26,7 +26,7 @@ public class HighScoreDisplay : MonoBehaviour
     {
         _text.text = string.Format (
             LanguageManager.Instance.GetTextValue (_localized.localizedKey),
-            _gameManager.HighScore
+            _scoreManager.HighScore
         );
     }
 }

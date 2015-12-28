@@ -177,4 +177,10 @@ planet's 1st orbit</value>
 +
 Drag</value>
 	</data>
+	<data name="World" xml:space="preserve">
+		<value>World</value>
+	</data>
+	<data name="You" xml:space="preserve">
+		<value>You</value>
+	</data>
 </root>
