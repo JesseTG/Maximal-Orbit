@@ -123,11 +123,17 @@
 	<data name="But Only First" xml:space="preserve">
 		<value>But only the first revolution</value>
 	</data>
+	<data name="Can't Connect" xml:space="preserve">
+		<value>Can't connect to the Internet</value>
+	</data>
 	<data name="Copyright" xml:space="preserve">
 		<value>Game copyright date</value>
 	</data>
 	<data name="Create Planets" xml:space="preserve">
 		<value>Create planets</value>
+	</data>
+	<data name="Daily" xml:space="preserve">
+		<value>Daily:</value>
 	</data>
 	<data name="Drag" xml:space="preserve">
 		<value>Drag your finger</value>
@@ -179,7 +185,10 @@
 	<data name="You" xml:space="preserve">
 		<value>You:</value>
 	</data>
-	<data name="Daily" xml:space="preserve">
-		<value>Daily:</value>
+	<data name="Top Score Pending" xml:space="preserve">
+		<value>Display while waiting to get the top score</value>
+	</data>
+	<data name="Score Not Found" xml:space="preserve">
+		<value>Display when couldn't connect</value>
 	</data>
 </root>
