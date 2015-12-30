@@ -44,6 +44,7 @@ public class PlanetManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
 
     private Vector2 _placingDropOff;
     private GameObject _waitingPlanet;
+    private ScoreManager _scoreManager;
     private GameManager _gameManager;
     private AudioSource _audio;
     private DragRendering _dragRendering;
@@ -55,6 +56,7 @@ public class PlanetManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     {
         _state = PlacingState.Idle;
         _gameManager = GameObject.FindObjectOfType<GameManager>();
+        _scoreManager = FindObjectOfType<ScoreManager>();
         _audio = GetComponent<AudioSource>();
         _dragRendering = GetComponent<DragRendering>();
         _quality = QualitySettings.GetQualityLevel();
@@ -105,7 +107,7 @@ public class PlanetManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
             Planet planet = _waitingPlanet.GetComponent<Planet>();
 
             _audio.PlayOneShot(this.TouchSound);
-            planet.OnRevolution.AddListener(_gameManager.PlanetFirstRevolved);
+            planet.OnRevolution.AddListener(_scoreManager.PlanetRevolved);
             planet.OnCrash.AddListener(_gameManager.EndGame);
         }
     }
