@@ -1,32 +1,46 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using GameUp;
 using System.Collections;
 using SmartLocalization;
 using SmartLocalization.Editor;
 
-[RequireComponent(typeof(Text), typeof(LocalizedText))]
+[RequireComponent(typeof(Text))]
 [DisallowMultipleComponent]
 public class HighScoreDisplay : MonoBehaviour
 {
     private ScoreManager _scoreManager;
     private Text _text;
-    private LocalizedText _localized;
+
+    public string LeaderboardKey;
+    public string HighScoreUnknown = "?";
 
     // Use this for initialization
-    void Start ()
+    void Start()
     {
-        _scoreManager = FindObjectOfType<ScoreManager> () as ScoreManager;
-        _text = GetComponent<Text> ();
-        _localized = GetComponent<LocalizedText> ();
-
-        DisplayHighScore ();
+        _scoreManager = FindObjectOfType<ScoreManager>() as ScoreManager;
+        _text = GetComponent<Text>();
+        
+        if (this.LeaderboardKey == "")
+        {
+            DisplayHighScore("", _scoreManager.HighScore);
+        }
+        else
+        {
+            this._text.text = this.HighScoreUnknown;
+        }
     }
 
-    public void DisplayHighScore ()
+    public void DisplayHighScore(string key, long score)
     {
-        _text.text = string.Format (
-            LanguageManager.Instance.GetTextValue (_localized.localizedKey),
-            _scoreManager.HighScore
-        );
+        if (key == this.LeaderboardKey)
+        {
+            _text.text = string.Format("{0}", score);
+        }
+    }
+
+    public void OnLeaderboardNotFound()
+    {
+        _text.text = this.HighScoreUnknown;
     }
 }
