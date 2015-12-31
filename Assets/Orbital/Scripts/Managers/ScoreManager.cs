@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 using GameUp;
-using System.Collections.Generic;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -39,7 +38,6 @@ public class ScoreManager : MonoBehaviour
     #region Heroic Labs Data
     private SessionClient _session;
     private Game _game;
-    private Dictionary<string, Leaderboard> _leaderboards;
     #endregion
 
 
@@ -55,8 +53,7 @@ public class ScoreManager : MonoBehaviour
 #if DEVELOPMENT_BUILD || UNITY_EDITOR
         Debug.LogFormat(this, "Loaded high score {0}", HighScore);
 #endif
-
-        this._leaderboards = new Dictionary<string, Leaderboard>();
+        
         Client.ApiKey = this.GameKey;
         Client.Ping(this.pingSuccess, this.failure);
     }
@@ -132,7 +129,6 @@ public class ScoreManager : MonoBehaviour
         Debug.LogErrorFormat(this, "Error {0}: {1}", status, reason);
         _game = null;
         _session = null;
-        _leaderboards.Clear();
         OnConnectionFailure.Invoke();
     }
 
@@ -157,8 +153,7 @@ public class ScoreManager : MonoBehaviour
     private void leaderboardSuccess(Leaderboard leaderboard)
     {
         Debug.LogFormat(this, "Found leaderboard {0}", leaderboard.Name);
-
-        this._leaderboards[leaderboard.LeaderboardId] = leaderboard;
+        
         this.OnLeaderboardUpdate.Invoke(leaderboard.LeaderboardId, leaderboard.Entries[0].Score);
     }
 
