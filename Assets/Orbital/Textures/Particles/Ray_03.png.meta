@@ -20,7 +20,7 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
-  grayScaleToAlpha: 0
+  grayScaleToAlpha: 1
   generateCubemap: 0
   cubemapConvolution: 0
   cubemapConvolutionSteps: 4
@@ -36,8 +36,8 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   rGBM: 0
-  compressionQuality: 50
-  allowsAlphaSplitting: 0
+  compressionQuality: -1
+  allowsAlphaSplitting: 1
   spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
@@ -46,18 +46,18 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
-  textureType: 8
+  textureType: 5
   buildTargetSettings:
   - buildTarget: iPhone
     maxTextureSize: 512
-    textureFormat: -5
-    compressionQuality: 50
-    allowsAlphaSplitting: 0
+    textureFormat: 33
+    compressionQuality: 0
+    allowsAlphaSplitting: 1
   - buildTarget: Android
-    maxTextureSize: 128
-    textureFormat: -1
+    maxTextureSize: 256
+    textureFormat: 47
     compressionQuality: 50
-    allowsAlphaSplitting: 0
+    allowsAlphaSplitting: 1
   - buildTarget: BlackBerry
     maxTextureSize: 256
     textureFormat: -1
@@ -70,9 +70,9 @@ TextureImporter:
     allowsAlphaSplitting: 0
   - buildTarget: WebGL
     maxTextureSize: 128
-    textureFormat: -5
-    compressionQuality: 50
-    allowsAlphaSplitting: 0
+    textureFormat: 29
+    compressionQuality: 0
+    allowsAlphaSplitting: 1
   spriteSheet:
     sprites: []
     outline: []

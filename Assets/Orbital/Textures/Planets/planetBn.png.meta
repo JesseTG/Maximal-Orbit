@@ -49,9 +49,9 @@ TextureImporter:
   textureType: 1
   buildTargetSettings:
   - buildTarget: Android
-    maxTextureSize: 256
+    maxTextureSize: 128
     textureFormat: -1
-    compressionQuality: 100
+    compressionQuality: 50
     allowsAlphaSplitting: 0
   - buildTarget: WebGL
     maxTextureSize: 256

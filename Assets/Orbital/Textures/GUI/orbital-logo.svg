@@ -24,11 +24,11 @@
        id="linearGradient5385"
        osb:paint="gradient">
       <stop
-         style="stop-color:#bc9a36;stop-opacity:1;"
+         style="stop-color:#a0b1b8;stop-opacity:1"
          offset="0"
          id="stop5387" />
       <stop
-         style="stop-color:#735900;stop-opacity:1"
+         style="stop-color:#7359ac;stop-opacity:1"
          offset="1"
          id="stop5389" />
     </linearGradient>
@@ -55,7 +55,7 @@
        fy="350.47647"
        r="29.284271"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(1.9146792,-5.6413675e-8,5.4617015e-8,1.8537006,-140.48105,-309.70372)" />
+       gradientTransform="matrix(1.9146792,-5.6413675e-8,5.4617015e-8,1.8537006,-122.26324,-302.53638)" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -64,9 +64,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.979899"
-     inkscape:cx="216.65277"
-     inkscape:cy="687.80264"
+     inkscape:zoom="3.959798"
+     inkscape:cx="241.71478"
+     inkscape:cy="683.39473"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -79,7 +79,9 @@
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
      showguides="true"
-     inkscape:guide-bbox="true">
+     inkscape:guide-bbox="true"
+     inkscape:object-nodes="true"
+     inkscape:snap-intersection-paths="true">
     <sodipodi:guide
        position="180.31223,805.59667"
        orientation="0,1"
@@ -101,6 +103,25 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
+    <path
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#decd87;stroke-width:6.14128017;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path4964"
+       transform="matrix(0.98250728,-0.1862242,0.62955796,0.77695353,0,0)"
+       sodipodi:type="arc"
+       sodipodi:cx="-24.214643"
+       sodipodi:cy="446.01993"
+       sodipodi:rx="93.949722"
+       sodipodi:ry="15.008224"
+       sodipodi:start="3.776649"
+       sodipodi:end="0.58330759"
+       d="m -99.847766,437.11671 a 93.949722,15.008224 0 0 1 129.39085,-3.40527 93.949722,15.008224 0 0 1 24.65698,20.57483"
+       sodipodi:open="true" />
+    <circle
+       style="opacity:1;fill:url(#radialGradient5405);fill-opacity:1;stroke:#4f3d7f;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path5375"
+       r="28.284271"
+       cy="358.21344"
+       cx="177.08914" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;opacity:1;fill:#ffffff;fill-opacity:1;stroke:#0017ff;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.50196078"
@@ -125,14 +146,6 @@
          x="192.85277"
          y="366.88611"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Quantum Round BRK';-inkscape-font-specification:'Quantum Round BRK';fill:none;fill-opacity:1;stroke:#0017ff;stroke-opacity:0.50196078">rbital</tspan></text>
-    <ellipse
-       style="opacity:1;fill:none;fill-opacity:1;stroke:#ffeeaa;stroke-width:6.1412804;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="path4964"
-       transform="matrix(0.98250728,-0.1862242,0.62955796,0.77695353,0,0)"
-       ry="15.008224"
-       rx="93.949722"
-       cy="446.01993"
-       cx="-24.214643" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;opacity:1;fill:#ffffff;fill-opacity:1;stroke:#0017ff;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.50196078;"
@@ -145,14 +158,8 @@
          x="192.85277"
          y="366.88611"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Quantum Round BRK';-inkscape-font-specification:'Quantum Round BRK';fill:#ffffff;fill-opacity:1;stroke:#0017ff;stroke-opacity:0.50196078;">rbital</tspan></text>
-    <circle
-       style="opacity:1;fill:url(#radialGradient5405);fill-opacity:1;stroke:#552200;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="path5375"
-       r="28.284271"
-       cy="351.04611"
-       cx="158.87134" />
     <path
-       style="opacity:1;fill:none;fill-opacity:1;stroke:#ffeeaa;stroke-width:6.14128043;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#f4eed7;stroke-width:6.14128017;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="path4964-3"
        transform="matrix(0.98250728,-0.1862242,0.62955796,0.77695353,0,0)"
        sodipodi:type="arc"
@@ -160,9 +167,9 @@
        sodipodi:cy="446.01993"
        sodipodi:rx="93.949722"
        sodipodi:ry="15.008224"
-       sodipodi:start="0"
-       sodipodi:end="3.2222919"
-       d="M 69.735079,446.01993 A 93.949722,15.008224 0 0 1 20.554847,459.21456 93.949722,15.008224 0 0 1 -75.496708,458.5951 93.949722,15.008224 0 0 1 -117.85861,444.81009"
+       sodipodi:start="6.1430146"
+       sodipodi:end="2.1191136"
+       d="m 68.813635,443.9231 a 93.949722,15.008224 0 0 1 -41.437511,14.63974 93.949722,15.008224 0 0 1 -100.562241,0.26515"
        sodipodi:open="true" />
   </g>
 </svg>

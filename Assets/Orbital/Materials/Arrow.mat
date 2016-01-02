@@ -88,7 +88,7 @@ Material:
       data:
         first:
           name: _Origin
-        second: {r: 624.31573, g: 239.37721, b: 16, a: 0}
+        second: {r: 531.5303, g: 220.83717, b: 16, a: 0}
       data:
         first:
           name: _Touch
