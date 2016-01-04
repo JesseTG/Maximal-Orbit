@@ -36,7 +36,7 @@ TextureImporter:
   nPOTScale: 1
   lightmap: 0
   rGBM: 0
-  compressionQuality: 75
+  compressionQuality: 50
   allowsAlphaSplitting: 0
   spriteMode: 0
   spriteExtrude: 1
@@ -47,11 +47,21 @@ TextureImporter:
   spritePixelsToUnits: 100
   alphaIsTransparency: 0
   textureType: 0
-  buildTargetSettings: []
+  buildTargetSettings:
+  - buildTarget: Android
+    maxTextureSize: 128
+    textureFormat: -1
+    compressionQuality: 50
+    allowsAlphaSplitting: 0
+  - buildTarget: WebGL
+    maxTextureSize: 256
+    textureFormat: -5
+    compressionQuality: 50
+    allowsAlphaSplitting: 0
   spriteSheet:
     sprites: []
     outline: []
-  spritePackingTag: 
+  spritePackingTag: Planet
   userData: 
   assetBundleName: 
   assetBundleVariant: 

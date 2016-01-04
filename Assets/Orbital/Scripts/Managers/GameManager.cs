@@ -38,11 +38,11 @@ public class GameManager : MonoBehaviour
 
         _explosionParticles = _explosion.GetComponent<ParticleSystem>();
         _explosionAudio = _explosion.GetComponent<AudioSource>();
+        Input.multiTouchEnabled = false;
     }
 
     public void GameStart()
     {
-
         _explosionParticles.Stop();
         _explosionParticles.Clear();
         this.State = GameState.Playing;

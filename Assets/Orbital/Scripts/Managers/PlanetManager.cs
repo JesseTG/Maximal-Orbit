@@ -86,29 +86,33 @@ public class PlanetManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        Vector3 touch = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-        this.OnScreenTouched.Invoke(touch);
-
-        if (Vector2.Distance(_sun.transform.position, touch) > _sun.SafeZone)
-        // If the player didn't touch too close to the sun...
+        if (!this._waitingPlanet)
         {
-            this._state = PlacingState.Placing;
-            this._placingDropOff = touch;
-            _dragRendering.enabled = true;
 
-            this._waitingPlanet = GameObject.Instantiate(
-            this.PlanetPrefab,
-            this._placingDropOff,
-            Quaternion.identity
-            ) as GameObject;
+            Vector3 touch = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+            this.OnScreenTouched.Invoke(touch);
+
+            if (Vector2.Distance(_sun.transform.position, touch) > _sun.SafeZone)
+            // If the player didn't touch too close to the sun...
+            {
+                this._state = PlacingState.Placing;
+                this._placingDropOff = touch;
+                _dragRendering.enabled = true;
+
+                this._waitingPlanet = GameObject.Instantiate(
+                this.PlanetPrefab,
+                this._placingDropOff,
+                Quaternion.identity
+                ) as GameObject;
 
 
-            Planet planet = _waitingPlanet.GetComponent<Planet>();
+                Planet planet = _waitingPlanet.GetComponent<Planet>();
 
-            _audio.PlayOneShot(this.TouchSound);
-            planet.OnRevolution.AddListener(_scoreManager.PlanetRevolved);
-            planet.OnCrash.AddListener(_gameManager.EndGame);
+                _audio.PlayOneShot(this.TouchSound);
+                planet.OnRevolution.AddListener(_scoreManager.PlanetRevolved);
+                planet.OnCrash.AddListener(_gameManager.EndGame);
+            }
         }
     }
 
