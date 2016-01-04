@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="133.67276"
+   height="123.95085"
+   viewBox="0 0 133.67276 123.95085"
+   id="svg4153"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="orbital-logo-2.svg"
+   inkscape:export-filename="D:\Code\Orbital\Assets\Orbital\Textures\GUI\orbital-logo-3.png"
+   inkscape:export-xdpi="290.43768"
+   inkscape:export-ydpi="290.43768">
+  <defs
+     id="defs4155" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.8284271"
+     inkscape:cx="26.220561"
+     inkscape:cy="46.552072"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:snap-object-midpoints="true"
+     inkscape:snap-center="true"
+     inkscape:object-paths="true"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     units="px"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:snap-text-baseline="false"
+     inkscape:snap-bbox="true"
+     inkscape:snap-bbox-edge-midpoints="false"
+     inkscape:bbox-paths="true"
+     inkscape:object-nodes="true"
+     inkscape:snap-smooth-nodes="true">
+    <sodipodi:guide
+       position="12.605181,61.516929"
+       orientation="0,1"
+       id="guide4137" />
+    <sodipodi:guide
+       position="95.332331,73.396924"
+       orientation="0,1"
+       id="guide4139" />
+    <sodipodi:guide
+       position="71.697329,61.975425"
+       orientation="1,0"
+       id="guide4141" />
+    <sodipodi:guide
+       position="48.612776,49.636924"
+       orientation="0,1"
+       id="guide4143" />
+    <sodipodi:guide
+       position="23.760011,61.516931"
+       orientation="1,0"
+       id="guide4149" />
+    <sodipodi:guide
+       position="127.91057,61.516929"
+       orientation="1,0"
+       id="guide4151" />
+    <sodipodi:guide
+       position="23.760011,73.396924"
+       orientation="0.22241696,0.97495164"
+       id="guide4153" />
+    <sodipodi:guide
+       position="127.91057,73.396924"
+       orientation="0.22241696,-0.97495164"
+       id="guide4155" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata4158">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-131.12494,-395.16218)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:125%;font-family:'Quantum Round BRK';-inkscape-font-specification:'Quantum Round BRK';letter-spacing:1px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="158.32291"
+       y="465.5061"
+       id="text4701"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4703"
+         x="158.32291"
+         y="465.5061"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:'Quantum Round BRK';-inkscape-font-specification:'Quantum Round BRK';letter-spacing:0px;writing-mode:lr-tb">RBITAL</tspan></text>
+    <circle
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:5.76300001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path4707"
+       cx="202.82227"
+       cy="457.1376"
+       r="59.093925" />
+    <circle
+       style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:5.76300001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path4711"
+       cx="143.00494"
+       cy="457.5961"
+       r="11.880007" />
+  </g>
+</svg>

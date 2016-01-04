@@ -15,6 +15,8 @@ DD/MM/YYYY
 
 ==============================================================================*/
 using UnityEngine;
+
+#if UNITY_STANDALONE || UNITY_ANDROID || UNITY_IOS
 using System;
 using System.IO;
 using System.Text;
@@ -219,5 +221,84 @@ public static class ZPlayerPrefs
     }
 
 }
+#else
+// ZPlayerPrefs not supported on WebGL, providing a stub implementation here
+public static class ZPlayerPrefs
+{
+    public static bool useSecure = true;
 
+    public static void DeleteAll()
+    {
+        PlayerPrefs.DeleteAll();
+    }
+
+    public static void DeleteKey(string key)
+    {
+        PlayerPrefs.DeleteKey(key);
+    }
+
+    public static float GetFloat(string key, float defaultValue = 0.0f, bool isDecrypt = true)
+    {
+        return PlayerPrefs.GetFloat(key, defaultValue);
+    }
+
+    public static int GetInt(string key, int defaultValue = 0, bool isDecrypt = true)
+    {
+        return PlayerPrefs.GetInt(key, defaultValue);
+    }
+
+    public static string GetString(string key)
+    {
+        return PlayerPrefs.GetString(key);
+    }
+
+    public static string GetRowString(string key)
+    {
+        return PlayerPrefs.GetString(key);
+    }
+
+    public static string GetString(string key, string defaultValue)
+    {
+        return PlayerPrefs.GetString(key, defaultValue);
+    }
+
+    public static string GetRowString(string key, string defaultValue)
+    {
+        return PlayerPrefs.GetString(key, defaultValue);
+    }
+
+    public static bool HasKey(string key)
+    {
+        return PlayerPrefs.HasKey(key);
+    }
+
+    public static void Save()
+    {
+        PlayerPrefs.Save();
+    }
+
+    public static void SetFloat(string key, float value)
+    {
+        PlayerPrefs.SetFloat(key, value);
+    }
+
+    public static void SetInt(string key, int value)
+    {
+        PlayerPrefs.SetInt(key, value);
+    }
+
+    public static void SetString(string key, string value)
+    {
+        PlayerPrefs.SetString(key, value);
+    }
+
+    /////////////////////////////////////////////////////////////////
+    // Help Function
+    /////////////////////////////////////////////////////////////////
+    public static void Initialize(string newPassword, string newSalt)
+    {
+        // Dummy; does nothing on unsupported platforms
+    }
+}
+#endif
 
