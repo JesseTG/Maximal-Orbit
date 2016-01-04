@@ -147,8 +147,8 @@
 1 point when a planet revolves around the sun its first time</value>
 	</data>
 	<data name="Launch Another" xml:space="preserve">
-		<value>Keep going
-(carefully)</value>
+		<value>How many can
+you place?</value>
 	</data>
 	<data name="Low Quality" xml:space="preserve">
 		<value>Fastest</value>
