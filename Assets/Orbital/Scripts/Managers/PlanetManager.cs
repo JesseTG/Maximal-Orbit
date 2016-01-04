@@ -46,7 +46,6 @@ public class PlanetManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     private GameObject _waitingPlanet;
     private ScoreManager _scoreManager;
     private GameManager _gameManager;
-    private AudioSource _audio;
     private DragRendering _dragRendering;
     private PlacingState _state;
     private Sun _sun;
@@ -57,7 +56,6 @@ public class PlanetManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
         _state = PlacingState.Idle;
         _gameManager = GameObject.FindObjectOfType<GameManager>();
         _scoreManager = FindObjectOfType<ScoreManager>();
-        _audio = GetComponent<AudioSource>();
         _dragRendering = GetComponent<DragRendering>();
         _quality = QualitySettings.GetQualityLevel();
         _sun = FindObjectOfType<Sun>();
@@ -108,8 +106,9 @@ public class PlanetManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
 
 
                 Planet planet = _waitingPlanet.GetComponent<Planet>();
+                AudioSource planetAudio = _waitingPlanet.GetComponent<AudioSource>();
 
-                _audio.PlayOneShot(this.TouchSound);
+                planetAudio.PlayOneShot(this.TouchSound);
                 planet.OnRevolution.AddListener(_scoreManager.PlanetRevolved);
                 planet.OnCrash.AddListener(_gameManager.EndGame);
             }
@@ -122,7 +121,8 @@ public class PlanetManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
         {
             Vector2 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 distance = _placingDropOff - mouse;
-            _audio.PlayOneShot(this.ReleaseSound);
+            AudioSource planetAudio = _waitingPlanet.GetComponent<AudioSource>();
+            planetAudio.PlayOneShot(this.ReleaseSound);
 
             Vector2 force = Vector2.ClampMagnitude(distance, MaxDistance);
             force *= force.magnitude;
