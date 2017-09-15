@@ -1,17 +1,22 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
+
+#if ONLINE_SCORES
 using GameUp;
+#endif
 
 public class ScoreManager : MonoBehaviour
 {
     public string HighScoreKey = "Best Score";
 
+	#if ONLINE_SCORES
     [Header("Leaderboard Information")]
     public string GameKey;
     public string[] LeaderboardKeys;
     public LeaderboardEvent OnLeaderboardUpdate;
     public UnityEvent OnConnectionFailure;
     public UnityEvent OnConnectionSuccess;
+	#endif
 
     public int HighScore
     {
@@ -35,10 +40,12 @@ public class ScoreManager : MonoBehaviour
     private int _highScore;
     private int _score;
 
+	#if ONLINE_SCORES
     #region Heroic Labs Data
     private SessionClient _session;
     private Game _game;
     #endregion
+	#endif
 
     private const string IDKEY = "ID5";
     void Start()
@@ -66,8 +73,10 @@ public class ScoreManager : MonoBehaviour
         Debug.LogFormat(this, "Loaded high score {0}", HighScore);
 #endif
         
+		#if ONLINE_SCORES
         Client.ApiKey = this.GameKey;
         Client.Ping(this.pingSuccess, this.failure);
+		#endif
     }
 
     public void PlanetRevolved(Planet planet)
@@ -96,7 +105,10 @@ public class ScoreManager : MonoBehaviour
             ZPlayerPrefs.SetInt(this.HighScoreKey, Score);
             this._highScore = Score;
 
+			#if ONLINE_SCORES
             this.OnLeaderboardUpdate.Invoke("", Score);
+			#endif
+
             ZPlayerPrefs.Save();
 
 #if DEVELOPMENT_BUILD || UNITY_EDITOR
@@ -104,6 +116,7 @@ public class ScoreManager : MonoBehaviour
 #endif
         }
 
+		#if ONLINE_SCORES
         if (_session != null)
         // If we were able to get online...
         {
@@ -117,17 +130,21 @@ public class ScoreManager : MonoBehaviour
         {
             Client.Ping(this.pingSuccess, this.failure);
         }
+		#endif
     }
 
     void OnApplicationQuit()
     {
+		#if ONLINE_SCORES
         if (_session != null)
         // If we managed to log in successfully in the first place...
         {
             Client.unlinkAnonymous(_session, this.GameKey, null, this.failure);
         }
+		#endif
     }
 
+	#if ONLINE_SCORES
     #region Callbacks
     private void pingSuccess(PingInfo ping)
     {
@@ -175,12 +192,13 @@ public class ScoreManager : MonoBehaviour
         Debug.LogFormat(this, "Leaderboard updated (Place #{0})", rank.Ranking);
     }
     #endregion
+	#endif
 
     // Needed for WebGL (but try again when Unity 5.4.0 comes out)
     // http://forum.unity3d.com/threads/cant-get-systeminfo-deviceuniqueidentifier-to-work-on-webgl-builds.291303/
     private static string GetUniqueID()
     {
-#if UNITY_WEBGL
+#if UNITY_WEBGL && !UNITY_5_4_OR_NEWER
         var random = new System.Random();
         byte[] buffer = new byte[32];
 

@@ -4,7 +4,7 @@ AudioImporter:
   serializedVersion: 6
   defaultSettings:
     loadType: 0
-    sampleRateSetting: 1
+    sampleRateSetting: 0
     sampleRateOverride: 0
     compressionFormat: 0
     quality: 1
@@ -15,32 +15,34 @@ AudioImporter:
       sampleRateSetting: 1
       sampleRateOverride: 0
       compressionFormat: 3
-      quality: .399999976
+      quality: 0.39999998
       conversionMode: 0
     7:
       loadType: 0
       sampleRateSetting: 1
       sampleRateOverride: 0
       compressionFormat: 3
-      quality: .25
+      quality: 0.25
       conversionMode: 0
     13:
       loadType: 0
-      sampleRateSetting: 1
-      sampleRateOverride: 0
-      compressionFormat: 3
-      quality: .099999994
+      sampleRateSetting: 2
+      sampleRateOverride: 44100
+      compressionFormat: 7
+      quality: 1
       conversionMode: 0
     16:
       loadType: 0
       sampleRateSetting: 1
       sampleRateOverride: 0
-      compressionFormat: 3
-      quality: .25
+      compressionFormat: 0
+      quality: 1
       conversionMode: 0
   forceToMono: 0
+  normalize: 1
   preloadAudioData: 1
   loadInBackground: 1
+  ambisonic: 0
   3D: 1
   userData: 
   assetBundleName: 

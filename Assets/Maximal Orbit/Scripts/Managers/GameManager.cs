@@ -3,10 +3,6 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using System.Collections;
 
-#if UNITY_ADS
-using UnityEngine.Advertisements;
-#endif
-
 /// <summary>
 /// Manages the game state
 /// </summary>
@@ -64,14 +60,6 @@ public class GameManager : MonoBehaviour
             this.State = GameState.Title;
             this._gamesThisSession++;
             this.OnGameOver.Invoke();
-
-#if UNITY_ADS
-            if (this._gamesThisSession % this.GamesPerAd == 0 && Advertisement.IsReady())
-                // Every nth game (where n == GamesPerAd)...
-            {
-                Advertisement.Show();
-            }
-#endif
         }
     }
 

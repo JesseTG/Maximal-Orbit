@@ -1,4 +1,6 @@
-﻿Shader "Custom/Moving Radial Gradient" {
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "Custom/Moving Radial Gradient" {
  Properties {
      _Color ("Color", Color) = (1,0,0,1)
      _Color2 ("Color 2", Color) = (0,0,1,1)
@@ -22,7 +24,7 @@
     float4 _Origin;
     
     float4 vert(float4 v : POSITION) : POSITION {
-        return mul (UNITY_MATRIX_MVP, v);
+        return UnityObjectToClipPos (v);
     }
 
     fixed4 frag(float4 sp : WPOS) : COLOR {
